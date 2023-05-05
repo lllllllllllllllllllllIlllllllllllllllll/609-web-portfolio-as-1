@@ -9,7 +9,10 @@ import Root from './pages/root/Root';
 import { Error } from './pages/root/Error';
 import { Home } from './pages/home/Home';
 import { About } from './pages/about/About';
-import { Store } from './pages/store/Store';
+import { Message } from './pages/message/Message';
+import { Pagelinks } from './pages/pagelinks/Pagelinkpage';
+import { Skills } from './pages/skills/Skills';
+import { Projects } from './pages/projects/Projects';
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
@@ -29,8 +32,20 @@ const router = createBrowserRouter([
         element: <About />
       },
       {
-        path: 'store',
-        element: <Store />
+        path: 'links',
+        element: <Pagelinks />
+      },
+      {
+        path: 'message',
+        element: <Message />
+      },
+      {
+        path: 'projects',
+        element: <Projects />
+      },
+      {
+        path: 'skills',
+        element: <Skills />
       }
     ]
   }

@@ -9,8 +9,8 @@ export const Home = () => {
         alignItems={'center'}
         minH={'calc(100vh - 5.2rem)'}
       >
-        <Heading fontSize={'6xl'}>Pet Store!</Heading>
-        <Heading>If you like animals, we have them :)</Heading>
+        <Heading fontSize={'6xl'}>Welcome to my website!</Heading>
+        <Heading>F</Heading>
       </Flex>
   );
 };

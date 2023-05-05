@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom';
 
 export const Navbar = () => {
   return (
-    <Box>
       <Flex justifyContent={'center'} py={5} borderBottom={'1px solid black'}>
         {navLinks.map(link => (
           <Link
@@ -36,6 +35,5 @@ export const Navbar = () => {
           </Link>
         ))}
       </Flex>
-    </Box>
   );
 };

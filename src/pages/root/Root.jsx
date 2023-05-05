@@ -17,12 +17,14 @@ import { PhoneIcon } from '@chakra-ui/icons';
 import {FaHome, FaOdnoklassniki, FaMailBulk, FaLaptop,
         FaToolbox, FaFolderOpen} from 'react-icons/fa';
 import { Footer } from '../../components/footer';
+
 const Root = () => {
     const navigation = useNavigation();
-    
+
     return (
         <ChakraProvider theme={theme}>
-        <Box>
+        {/* responsive style */}
+        <Box w={[300, 400, 500, 1000, 2000]}>
             <NavLink to={'/'}
             className={({isActive, isPending}) =>
             isActive ? 'active' : isPending ? 'pending' : ''}>
@@ -39,20 +41,20 @@ const Root = () => {
                     rightIcon={<FaOdnoklassniki />}>About</Button>
             </NavLink>
 
-            <NavLink to={'Projects'}
-            className={({isActive, isPending}) =>
-            isActive ? 'active' : isPending ? 'pending' : ''}>
-                <Button
-                    aria-label='Project-button'
-                    rightIcon={<FaFolderOpen />}>Projects</Button>
-            </NavLink>
-
             <NavLink to={'Skills'}
             className={({isActive, isPending}) =>
             isActive ? 'active' : isPending ? 'pending' : ''}>
                 <Button
                     aria-label='Skills-button'
                     rightIcon={<FaToolbox />}>Skills</Button>
+            </NavLink>
+
+            <NavLink to={'Projects'}
+            className={({isActive, isPending}) =>
+            isActive ? 'active' : isPending ? 'pending' : ''}>
+                <Button
+                    aria-label='Project-button'
+                    rightIcon={<FaFolderOpen />}>Projects</Button>
             </NavLink>
 
             <NavLink to={'Links'}

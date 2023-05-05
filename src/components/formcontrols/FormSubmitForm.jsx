@@ -1,4 +1,4 @@
-import { Input, Box, Textarea, FormControl, FormLabel, FormErrorMessage, FormHelperText, Button } from '@chakra-ui/react';
+import { Input, Box, Textarea, FormControl, FormLabel, FormErrorMessage, FormHelperText, Button, Flex } from '@chakra-ui/react';
 import React from 'react';
 
 
@@ -7,28 +7,22 @@ export const FormSubmitForm = () => {
     let [contact, setContact] = React.useState('');
     let [name, setName] = React.useState('');
     let [message, setMessage] = React.useState('');
-    let saveMessage = "";
-    let saveName = "";
-    let saveContact = "";
 
     let handleMessageChange = (e) => {
-        saveMessage = e.target.value;
         setMessage(e.target.value);
     }
     let handleNameChange = (e) => {
-        saveName = e.target.value;
         setName(e.target.value);
     }
 
     let handleContactChange = (e) => {
-        saveContact = e.target.value;
         setContact(e.target.value);
-        
     }
 
     let handleSubmitChange = async (e) => {
-        /*can only send message if the button hasnt changed to sent!*/
-        if (isSubmit == "")
+        /* can only send message if the button hasnt changed to sent, stops spam sort of?*/
+        /* can only send message when every field isnt empty, minimal validation */
+        if (isSubmit === "" && name !== "" && contact !== "" && message !== "")
         {
             let discordMessage = {
                 "username": "butterdog",
@@ -59,7 +53,6 @@ export const FormSubmitForm = () => {
 
     return(
         <Box>
-        <Box>
         <FormControl isRequired>
         <FormLabel>Name</FormLabel>
             <FormHelperText>Enter your name</FormHelperText>
@@ -69,9 +62,7 @@ export const FormSubmitForm = () => {
                 placeholder='Name'
                 size='md'/>
         </FormControl>
-        </Box>
 
-        <Box>
         <FormControl isRequired>
         <FormLabel>Contact</FormLabel>
             <FormHelperText>Enter email, phone number or discord</FormHelperText>
@@ -81,9 +72,7 @@ export const FormSubmitForm = () => {
                 placeholder='Contact'
                 size='md'/>
         </FormControl>
-        </Box>
 
-        <Box>
         <FormControl isRequired>
         <FormLabel>Message</FormLabel>
             <FormHelperText>Enter brief message, max length: 1000</FormHelperText>
@@ -94,9 +83,7 @@ export const FormSubmitForm = () => {
                 placeholder='Message'
                 size='md'/>
         </FormControl>
-        </Box>
 
-        <Box>
         <FormControl>
             <Button 
             type='submit'
@@ -107,7 +94,6 @@ export const FormSubmitForm = () => {
                 {isSubmit == "Sent!" ? "Sent!" : "Send"}
             </Button>
         </FormControl>
-        </Box>
         </Box>
     );
 }

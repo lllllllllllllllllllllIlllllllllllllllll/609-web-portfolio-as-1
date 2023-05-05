@@ -1,4 +1,4 @@
-import { Flex, Heading } from '@chakra-ui/react';
+import { Flex, Heading, Avatar } from '@chakra-ui/react';
 import React from 'react';
 
 export const Home = () => {
@@ -9,8 +9,14 @@ export const Home = () => {
         alignItems={'center'}
         minH={'calc(100vh - 5.2rem)'}
       >
-        <Heading fontSize={'6xl'}>Welcome to my website!</Heading>
-        <Heading>F</Heading>
+        <Avatar
+            size='2xl'
+            name='DS'
+            src='img/smsprofile.png'
+        />
+
+        <Heading fontSize={'3xl'}>Hi, my name is Daniel and I am an aspiring software engineer and full-stack developer!</Heading>
+        <Heading>Welcome to my website!</Heading>
       </Flex>
   );
 };
